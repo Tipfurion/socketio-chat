@@ -1,28 +1,95 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <navbar></navbar>
+    <chat></chat>
+   <chat-input></chat-input>
+    
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import navbar from './components/Navbar.vue'
+import chat from './components/Chat.vue'
+import message from './components/Message.vue'
+import chatInput from './components/ChatInput.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    navbar,
+    chat,
+    message,
+    chatInput
+    
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+.chat-box{
+
+  border:1px solid #e0e0e0;
+  border-radius: 10px;
+  margin: 5px;
+  height: 50%;
 }
+.chat-wrapper{
+  overflow-y: auto;
+  
+
+}
+body{
+  overflow-x: hidden;
+}
+pre {
+    overflow: hidden;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+   }
+.timestamp{
+  color: lightslategrey;
+}
+.chat-input{
+  position: fixed;
+  bottom: 0;
+  border:1px solid #9e9e9e;
+  border-radius: 10px;
+  background-color: white;
+}
+.chat-input-wrapper{
+ 
+
+}
+
+.slide-enter-active, .slide-leave-active
+{
+transition:  .1s;
+}
+.slide-enter {
+  transform: translate(-100%, 0);
+
+}
+.slide-leave-to {
+  transform: translate(100%, 0);
+}
+.fix{
+  position: fixed;
+  top:200px;
+  right: 200px;
+  z-index: 1000;
+}
+ /* label focus color */
+   .input-field textarea:focus + label {
+     color: #29b6f6 !important;
+}
+/* label underline focus color */
+   .input-field textarea:focus {
+     border-bottom: 1px solid #29b6f6!important;
+     box-shadow: 0 1px 0 0 #29b6f6 !important;
+   }
+
 </style>
