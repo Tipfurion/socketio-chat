@@ -12,15 +12,24 @@
     "express": "^4.17.1",
     "materialize-css": "^1.0.0-rc.2",
     "socket.io": "^2.3.0",
-    "vue": "^2.6.11"
+    "socket.io-client": "^2.3.0",
+    "uws": "^100.0.1",
+    "vue": "^2.6.11",
+    "vue-socket.io": "^3.0.7"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.2.0",
     "@vue/cli-service": "^4.2.0",
     "vue-template-compiler": "^2.6.11"
   },
-  "nodemonConfig": { "ext": "js", "ignore": ["*.test.ts", "db/*"], "delay": "2" },
-
+  "nodemonConfig": {
+    "ext": "js",
+    "ignore": [
+      "*.test.ts",
+      "db/*"
+    ],
+    "delay": "2"
+  },
   "browserslist": [
     "> 1%",
     "last 2 versions"

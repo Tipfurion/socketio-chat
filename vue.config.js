@@ -1,7 +1,10 @@
-
-
 module.exports = {
-  devServer: {
-    '/api': 'http://localhost:3000'
+    devServer: {
+        proxy: {
+            '/api': { 
+              target: 'http://localhost:3000'
+            }
+          }
+    },
+    configureWebpack: { externals: ['uws'] }
   }
-}

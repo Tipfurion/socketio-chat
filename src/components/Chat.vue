@@ -2,7 +2,7 @@
 <template>
 
 <div class="row chat-wrapper">
-<button class="fix" @click="c">sssssssss</button>
+<button class="fix" @click="d">sssssssss</button>
   <div class="col l2 s0 m0"></div>
   <div class="col l7 s12 m12" >
       <div class="row">
@@ -35,6 +35,7 @@
 </template>
 
 <script>
+
 import message from './Message.vue'
 export default {
   name: 'Chat',
@@ -54,6 +55,12 @@ export default {
     c:function(){
       let a = {text:"ss!",username:"ss",isMine:Math.round(Math.random())}
       this.messages.push(a)
+      
+    },
+    d:async function(){
+      let result = await fetch("/api/test")
+      console.log(result);
+      
     },
     scrollBottom:function() {
       if(window.scrollY + window.innerHeight+400>=document.body.scrollHeight)
