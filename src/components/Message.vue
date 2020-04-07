@@ -41,7 +41,6 @@ export default {
         this.created=true;
     },
     updated:function(){
-
         this.$parent.$emit("MESSAGE-MOUNTED")
     }
     

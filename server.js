@@ -51,5 +51,5 @@ io.on('connection', function(socket){
 });
 
 http.listen(config.port, function(){
-  console.log('listening on *:3000');
+  console.log('listening on :'+config.port);
 });

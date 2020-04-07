@@ -58,6 +58,7 @@ pre {
 }
 .my-message{
  background-color: #abe5ff;
+ border:none;
 }
 
 .slide-enter-active, .slide-leave-active
