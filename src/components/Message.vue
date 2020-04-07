@@ -3,7 +3,7 @@
     <li class="col s6 chat-box " v-show="created">
         <h5>{{username}}</h5>
             <pre class="" >{{text}}</pre>
-        <p class="right-align timestamp">12:00</p>
+        <p class="right-align timestamp">{{timestamp}}</p>
     </li>  
 </transition>  
 </template>
@@ -20,7 +20,7 @@ export default {
         username:'',
         isMine:false,
         created:false,
-        timestamp:Date.now()
+        timestamp:new Date().toLocaleTimeString().substr(0,5)
         }
     },
     beforeCreate:function() {
@@ -36,12 +36,13 @@ export default {
     mounted:function(){
         if(this.isMine){
             this.$el.classList.add("offset-s6")
+            this.$el.classList.add("my-message")
         }
         this.created=true;
     },
     updated:function(){
 
-        this.$parent.$emit("message-mounted")
+        this.$parent.$emit("MESSAGE-MOUNTED")
     }
     
 }

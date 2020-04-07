@@ -180,3 +180,18 @@ nodemon.json
       "src/server"
     ]
   }
+
+
+
+
+
+
+
+
+    created:function(){
+    document.addEventListener('DOMContentLoaded', function() {
+    let elems = document.querySelectorAll('.dropdown-trigger');
+    this.inputEl = document.querySelector('#nameInput')
+    this.instances = M.Dropdown.init(elems,{closeOnClick:false});
+  });
+  },

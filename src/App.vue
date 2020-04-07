@@ -1,9 +1,6 @@
 <template>
   <div id="app">
-    <navbar></navbar>
-    <chat></chat>
-   <chat-input></chat-input>
-    
+    <chat></chat>   
   </div>
 </template>
 
@@ -12,9 +9,6 @@ import navbar from './components/Navbar.vue'
 import chat from './components/Chat.vue'
 import message from './components/Message.vue'
 import chatInput from './components/ChatInput.vue'
-
-
-
 
 export default {
   name: 'App',
@@ -62,9 +56,8 @@ pre {
   border-radius: 10px;
   background-color: white;
 }
-.chat-input-wrapper{
- 
-
+.my-message{
+ background-color: #abe5ff;
 }
 
 .slide-enter-active, .slide-leave-active
@@ -93,5 +86,11 @@ transition:  .1s;
      border-bottom: 1px solid #29b6f6!important;
      box-shadow: 0 1px 0 0 #29b6f6 !important;
    }
+
+/* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #29b6f6!important;
+     box-shadow: 0 1px 0 0 #29b6f6 !important;
+   } 
 
 </style>

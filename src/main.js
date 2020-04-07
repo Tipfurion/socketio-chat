@@ -3,7 +3,7 @@ import App from './App.vue'
 import M from 'materialize-css' 
 import "materialize-css";
 import 'materialize-css/dist/css/materialize.min.css'
-
+import config from '../config'
 import VueSocketIO from 'vue-socket.io'
 import SocketIO from "socket.io-client"
 
@@ -14,8 +14,7 @@ import SocketIO from "socket.io-client"
 
 Vue.use(new VueSocketIO({
   debug: true,
-  connection: 'http://localhost:3000',
-
+  connection: 'http://localhost:'+config.port,
 }))
 
 Vue.use(M)

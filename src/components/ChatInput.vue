@@ -27,26 +27,29 @@ export default {
     name: 'ChatInput',
     data:function(){
         return{
-        
+        textarea:null,
+        messageText:''
         }
     },
     methods:{
       textareaConfigure:function(){
-        let textarea = document.querySelector("#message_input")
-        console.log(textarea);
-        
-        textarea.onkeydown = function(e){
+        this.textarea = document.querySelector("#message_input")
+        this.textarea.onkeydown = function(e){
           if (e.keyCode == 13 && !e.shiftKey){  
             e.preventDefault();
           }
         }
       },
       submit:function(){
-
-        console.log('submit!');
-        
+        if(this.textarea.value){
+         //this.$socket.emit('SEND_MESSAGE', this.textarea.value)
+         this.$parent.$emit('send-message', this.textarea.value)
+         this.$parent.$emit('SHOW-MY-MESSAGE', this.textarea.value)
+         this.textarea.value=''; 
+        }                    
       }
     },
+
     mounted:function(){
       this.textareaConfigure();
     }
@@ -59,13 +62,5 @@ export default {
 .chat-button{
   border-radius: 10px !important;
 }
- /* label focus color */
-   .input-field textarea:focus + label {
-     color: #000;
-}
-/* label underline focus color */
-   .input-field textarea:focus {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
+
 </style>
