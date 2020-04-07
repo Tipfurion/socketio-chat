@@ -1,12 +1,12 @@
+let express = require('express');
 let app = require('express')();
 let http = require('http').createServer(app);
 let io = require('socket.io')(http);
 let user = 'USER FROM SERVER'
 let activeUsers=[]
-const config = require('../config')
-app.get('/api/test', function(req, res){
-  res.send('works')
-});
+const config = require('./config')
+
+app.use(express.static(__dirname +'/dist'));
 
 io.on('connection', function(socket){
   
@@ -30,13 +30,11 @@ io.on('connection', function(socket){
     else{
       activeUsers.push({name:name,id:socket.id})
     }
-    //activeUsers.push({name:name,id:socket.id})
+ 
     socket.emit("GET_NAME", name)
     io.sockets.emit('SEND_USERS', activeUsers);
     console.log(name+' connected');
   });
-  
-
   socket.on('disconnect', () => {
     activeUsers.forEach((user,i) => {
       if(user.id==socket.id)
@@ -48,7 +46,6 @@ io.on('connection', function(socket){
     socket.broadcast.emit('SEND_USERS', activeUsers);
   });
   socket.on('SEND_MESSAGE', function(data) {
-    //io.emit('MESSAGE', data)
     socket.broadcast.emit('MESSAGE', data);
   });
 });

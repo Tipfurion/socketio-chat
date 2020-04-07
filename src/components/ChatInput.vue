@@ -1,7 +1,6 @@
 
    
-<template>
-      
+<template>   
       <div class="row " >      
         <div class="row  offset-l3 col s12 m12 l5  chat-input">   
         <div class="input-field col s12">
@@ -12,13 +11,10 @@
           <button class="btn waves-effect waves-light chat-button light-blue lighten-1 col s8 offset-s2" type="submit" name="action" @click="submit">send
             <i class="material-icons right">send</i>
           </button>
-        </div>
-        
+        </div>       
       </div> 
 </div>
-
 </template>
-
 
 <script>
 
@@ -42,7 +38,6 @@ export default {
       },
       submit:function(){
         if(this.textarea.value){
-         //this.$socket.emit('SEND_MESSAGE', this.textarea.value)
          this.$parent.$emit('send-message', this.textarea.value)
          this.$parent.$emit('SHOW-MY-MESSAGE', this.textarea.value)
          this.textarea.value=''; 

@@ -5,7 +5,6 @@
       <a class="brand-logo">Chat</a>
       <ul id="nav-mobile" class="right">
           <li> <a class='dropdown-trigger '  data-target='dropdown1'>Users</a></li>
-    <!-- Dropdown Structure -->
         <ul id='dropdown1' class='dropdown-content'>
           <li class="my-username">{{username}}</li>
           <li v-for="(user, i) in users" :index=i :key=i>{{user}}</li>   

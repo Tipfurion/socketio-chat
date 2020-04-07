@@ -77,17 +77,13 @@ transition:  .1s;
   right: 200px;
   z-index: 1000;
 }
- /* label focus color */
    .input-field textarea:focus + label {
      color: #29b6f6 !important;
 }
-/* label underline focus color */
    .input-field textarea:focus {
      border-bottom: 1px solid #29b6f6!important;
      box-shadow: 0 1px 0 0 #29b6f6 !important;
    }
-
-/* label underline focus color */
    .input-field input[type=text]:focus {
      border-bottom: 1px solid #29b6f6!important;
      box-shadow: 0 1px 0 0 #29b6f6 !important;

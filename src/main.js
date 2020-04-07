@@ -5,12 +5,6 @@ import "materialize-css";
 import 'materialize-css/dist/css/materialize.min.css'
 import config from '../config'
 import VueSocketIO from 'vue-socket.io'
-import SocketIO from "socket.io-client"
-
-//console.log(socketio);
-//console.log(VueSocketIO);
-//console.log(SocketInstance);
-
 
 Vue.use(new VueSocketIO({
   debug: true,
